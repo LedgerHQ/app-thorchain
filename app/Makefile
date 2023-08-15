@@ -25,7 +25,7 @@ MY_DIR := $(dir $(lastword $(MAKEFILE_LIST)))
 include $(BOLOS_SDK)/Makefile.defines
 
 # Main app configuration
-APPNAME = "THORChain"
+APPNAME = "MAYAChain"
 APPVERSION_M=2
 APPVERSION_N=2
 APPVERSION_P=0
@@ -185,7 +185,7 @@ delete:
 	python3 -m ledgerblue.deleteApp $(COMMON_DELETE_PARAMS)
 
 listvariants:
-	@echo VARIANTS COIN RUNE
+	@echo VARIANTS COIN CACAO
 
 version:
 	@echo "v$(APPVERSION)" > app.version

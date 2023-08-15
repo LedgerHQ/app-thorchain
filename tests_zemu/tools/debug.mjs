@@ -13,10 +13,10 @@ const SIM_OPTIONS = {
 };
 
 // MsgSend
-const example_MsgSend_tx_str = {"account_number":"588","chain_id":"thorchain","fee":{"amount":[],"gas":"2000000"},"memo":"TestMemo","msgs":[{"type":"thorchain/MsgSend","value":{"amount":[{"amount":"150000000","denom":"rune"}],"from_address":"tthor1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp","to_address":"tthor10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"}}],"sequence":"5"};
+const example_MsgSend_tx_str = {"account_number":"588","chain_id":"mayachain","fee":{"amount":[],"gas":"2000000"},"memo":"TestMemo","msgs":[{"type":"mayachain/MsgSend","value":{"amount":[{"amount":"150000000","denom":"cacao"}],"from_address":"tmaya1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp","to_address":"tmaya10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"}}],"sequence":"5"};
 
 // MsgDeposit
-const example_MsgDeposit_tx_str = {"account_number":"588","chain_id":"thorchain","fee":{"amount":[],"gas":"10000000"},"memo":"","msgs":[{"type":"thorchain/MsgDeposit","value":{"coins":[{"amount":"330000000","asset":"THOR.RUNE"}],"memo":"SWAP:BNB.BNB:tbnb1qk2m905ypazwfau9cn0qnr4c4yxz63v9u9md20:","signer":"tthor1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp"}}],"sequence":"6"};
+const example_MsgDeposit_tx_str = {"account_number":"588","chain_id":"mayachain","fee":{"amount":[],"gas":"10000000"},"memo":"","msgs":[{"type":"mayachain/MsgDeposit","value":{"coins":[{"amount":"330000000","asset":"MAYA.CACAO"}],"memo":"SWAP:BNB.BNB:tbnb1qk2m905ypazwfau9cn0qnr4c4yxz63v9u9md20:","signer":"tmaya1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp"}}],"sequence":"6"};
 
 async function beforeStart() {
     process.on("SIGINT", () => {
@@ -39,7 +39,7 @@ async function debugScenario(sim, app) {
 
 
 //    await Zemu.default.sleep(120000);
-    //const addr = await app.getAddressAndPubKey(path, "tthor");
+    //const addr = await app.getAddressAndPubKey(path, "tmaya");
     //console.log(addr)
 
     //console.log(tx);

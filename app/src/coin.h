@@ -41,17 +41,17 @@ typedef enum {
 #define VIEW_ADDRESS_OFFSET_SECP256K1  PK_LEN_SECP256K1
 #define VIEW_ADDRESS_LAST_PAGE_DEFAULT 0
 
-#define MENU_MAIN_APP_LINE1 "THORChain"
+#define MENU_MAIN_APP_LINE1 "MAYAChain"
 #define MENU_MAIN_APP_LINE2 "ready"
 #define APPVERSION_LINE1    "Version:"
 #define APPVERSION_LINE2    ("v" APPVERSION)
 
 #define CRYPTO_BLOB_SKIP_BYTES 0
-#define DEFAULT_CHAINID_PREFIX "thorchain"
+#define DEFAULT_CHAINID_PREFIX "mayachain"
 
-// In non-expert mode, the app will convert from tor to RUNE
+// In non-expert mode, the app will convert from tor to CACAO
 #define COIN_DEFAULT_DENOM_BASE   "tor"
-#define COIN_DEFAULT_DENOM_REPR   "RUNE"
+#define COIN_DEFAULT_DENOM_REPR   "CACAO"
 #define COIN_DEFAULT_DENOM_FACTOR 8
 
 #ifdef __cplusplus

@@ -53,8 +53,8 @@ __Z_INLINE void strcat_chunk_s(char *dst,
 ///////////////////////////
 
 static const key_subst_t value_substitutions[] = {
-    {"thorchain/MsgSend", "Send"},
-    {"thorchain/MsgDeposit", "Deposit"},
+    {"mayachain/MsgSend", "Send"},
+    {"mayachain/MsgDeposit", "Deposit"},
     {"[]", "Empty"},
 };
 

@@ -53,7 +53,7 @@ parser_error_t parser_getNumItems(const parser_context_t *ctx, uint8_t *num_item
 }
 
 // This should always query for the direct JSMN_STRING type
-// and THORChain always sends in long format, eg "100000000" for "1.0 RUNE"
+// and MAYAChain always sends in long format, eg "100000000" for "1.0 CACAO"
 __Z_INLINE bool_t parser_isAmount(char *key) {
     if (strcmp(key, "msgs/value/coins") == 0) return bool_true;
 
@@ -87,13 +87,13 @@ __Z_INLINE parser_error_t parser_formatAmount(uint16_t amountToken,
     if (parser_tx_obj.json.tokens[amountToken].type != JSMN_OBJECT) return parser_unexpected_field;
 
     // Point at the correct JSMN_STRING.
-    // {"amount": "2000","asset": "THOR.RUNE"} where we want "2000" (+2) and "THOR.RUNE" (+4)
+    // {"amount": "2000","asset": "MAYA.CACAO"} where we want "2000" (+2) and "MAYA.CACAO" (+4)
     amountToken += 2;
 
     // Should now be a String, e.g. "2000" ready to format
     if (parser_tx_obj.json.tokens[amountToken].type != JSMN_STRING) return parser_unexpected_field;
 
-    // We also parse "asset", e.g. "THOR.RUNE" or "BTC/BTC" synths.
+    // We also parse "asset", e.g. "MAYA.CACAO" or "BTC/BTC" synths.
     if (parser_tx_obj.json.tokens[amountToken + 2].type != JSMN_STRING) {
         return parser_unexpected_field;
     }
@@ -109,7 +109,7 @@ __Z_INLINE parser_error_t parser_formatAmount(uint16_t amountToken,
     if (parser_tx_obj.json.tokens[amountToken + 2].start < 0) return parser_unexpected_buffer_end;
 
     const char *assetNamePtr =
-        parser_tx_obj.tx + parser_tx_obj.json.tokens[amountToken + 2].start;  // "THOR.RUNE" etc.
+        parser_tx_obj.tx + parser_tx_obj.json.tokens[amountToken + 2].start;  // "MAYA.CACAO" etc.
 
     const int16_t amountLen =
         parser_tx_obj.json.tokens[amountToken].end - parser_tx_obj.json.tokens[amountToken].start;
@@ -121,7 +121,7 @@ __Z_INLINE parser_error_t parser_formatAmount(uint16_t amountToken,
         return parser_unexpected_buffer_end;
     }
 
-    // Worst case "<amount.float> RUNE"
+    // Worst case "<amount.float> CACAO"
     if (sizeof(bufferUI) < (size_t)(amountLen + 2 + assetNameLen)) {
         return parser_unexpected_buffer_end;
     }

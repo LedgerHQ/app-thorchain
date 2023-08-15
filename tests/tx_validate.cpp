@@ -23,7 +23,7 @@
 namespace {
     TEST(TxValidationTest, CorrectFormat) {
         auto transaction =
-            R"({"account_number":"588","chain_id":"thorchain","fee":{"amount":[],"gas":"2000000"},"memo":"TestMemo","msgs":[{"type":"thorchain/MsgSend","value":{"amount":[{"amount":"150000000","denom":"rune"}],"from_address":"tthor1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp","to_address":"tthor10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"}}],"sequence":"5"})";
+            R"({"account_number":"588","chain_id":"mayachain","fee":{"amount":[],"gas":"2000000"},"memo":"TestMemo","msgs":[{"type":"mayachain/MsgSend","value":{"amount":[{"amount":"150000000","denom":"cacao"}],"from_address":"tmaya1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp","to_address":"tmaya10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"}}],"sequence":"5"})";
 
         parsed_json_t json;
         parser_error_t err;
@@ -36,7 +36,7 @@ namespace {
     }
     TEST(TxValidationTest, MissingAccountNumber) {
         auto transaction =
-            R"({"chain_id":"thorchain","fee":{"amount":[],"gas":"2000000"},"memo":"TestMemo","msgs":[{"type":"thorchain/MsgSend","value":{"amount":[{"amount":"150000000","denom":"rune"}],"from_address":"tthor1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp","to_address":"tthor10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"}}],"sequence":"5"})";
+            R"({"chain_id":"mayachain","fee":{"amount":[],"gas":"2000000"},"memo":"TestMemo","msgs":[{"type":"mayachain/MsgSend","value":{"amount":[{"amount":"150000000","denom":"cacao"}],"from_address":"tmaya1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp","to_address":"tmaya10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"}}],"sequence":"5"})";
 
         parsed_json_t json;
         parser_error_t err;
@@ -51,7 +51,7 @@ namespace {
 
     TEST(TxValidationTest, MissingChainId) {
         auto transaction =
-            R"({"account_number":"588","fee":{"amount":[],"gas":"2000000"},"memo":"TestMemo","msgs":[{"type":"thorchain/MsgSend","value":{"amount":[{"amount":"150000000","denom":"rune"}],"from_address":"tthor1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp","to_address":"tthor10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"}}],"sequence":"5"})";
+            R"({"account_number":"588","fee":{"amount":[],"gas":"2000000"},"memo":"TestMemo","msgs":[{"type":"mayachain/MsgSend","value":{"amount":[{"amount":"150000000","denom":"cacao"}],"from_address":"tmaya1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp","to_address":"tmaya10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"}}],"sequence":"5"})";
 
         parsed_json_t json;
         parser_error_t err;
@@ -65,7 +65,7 @@ namespace {
 
     TEST(TxValidationTest, MissingFee) {
         auto transaction =
-            R"({"account_number":"588","chain_id":"thorchain","memo":"TestMemo","msgs":[{"type":"thorchain/MsgSend","value":{"amount":[{"amount":"150000000","denom":"rune"}],"from_address":"tthor1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp","to_address":"tthor10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"}}],"sequence":"5"})";
+            R"({"account_number":"588","chain_id":"mayachain","memo":"TestMemo","msgs":[{"type":"mayachain/MsgSend","value":{"amount":[{"amount":"150000000","denom":"cacao"}],"from_address":"tmaya1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp","to_address":"tmaya10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"}}],"sequence":"5"})";
 
         parsed_json_t json;
         parser_error_t err;
@@ -79,7 +79,7 @@ namespace {
 
     TEST(TxValidationTest, MissingMsgs) {
         auto transaction =
-            R"({"account_number":"588","chain_id":"thorchain","fee":{"amount":[],"gas":"2000000"},"memo":"TestMemo","sequence":"5"})";
+            R"({"account_number":"588","chain_id":"mayachain","fee":{"amount":[],"gas":"2000000"},"memo":"TestMemo","sequence":"5"})";
 
         parsed_json_t json;
         parser_error_t err;
@@ -93,7 +93,7 @@ namespace {
 
     TEST(TxValidationTest, MissingSequence) {
         auto transaction =
-            R"({"account_number":"588","chain_id":"thorchain","fee":{"amount":[],"gas":"2000000"},"memo":"TestMemo","msgs":[{"type":"thorchain/MsgSend","value":{"amount":[{"amount":"150000000","denom":"rune"}],"from_address":"tthor1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp","to_address":"tthor10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"}}]})";
+            R"({"account_number":"588","chain_id":"mayachain","fee":{"amount":[],"gas":"2000000"},"memo":"TestMemo","msgs":[{"type":"mayachain/MsgSend","value":{"amount":[{"amount":"150000000","denom":"cacao"}],"from_address":"tmaya1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp","to_address":"tmaya10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"}}]})";
 
         parsed_json_t json;
         parser_error_t err;
@@ -107,7 +107,7 @@ namespace {
 
     TEST(TxValidationTest, Spaces_InTheMiddle) {
         auto transaction =
-            R"({"account_number":"588", "chain_id":"thorchain","fee":{"amount":[],"gas":"2000000"},"memo":"TestMemo","msgs":[{"type":"thorchain/MsgSend","value":{"amount":[{"amount":"150000000","denom":"rune"}],"from_address":"tthor1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp","to_address":"tthor10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"}}],"sequence":"5"})";
+            R"({"account_number":"588", "chain_id":"mayachain","fee":{"amount":[],"gas":"2000000"},"memo":"TestMemo","msgs":[{"type":"mayachain/MsgSend","value":{"amount":[{"amount":"150000000","denom":"cacao"}],"from_address":"tmaya1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp","to_address":"tmaya10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"}}],"sequence":"5"})";
 
         parsed_json_t json;
         parser_error_t err;
@@ -121,7 +121,7 @@ namespace {
 
     TEST(TxValidationTest, Spaces_AtTheFront) {
         auto transaction =
-            R"({  "account_number":"588","chain_id":"thorchain","fee":{"amount":[],"gas":"2000000"},"memo":"TestMemo","msgs":[{"type":"thorchain/MsgSend","value":{"amount":[{"amount":"150000000","denom":"rune"}],"from_address":"tthor1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp","to_address":"tthor10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"}}],"sequence":"5"})";
+            R"({  "account_number":"588","chain_id":"mayachain","fee":{"amount":[],"gas":"2000000"},"memo":"TestMemo","msgs":[{"type":"mayachain/MsgSend","value":{"amount":[{"amount":"150000000","denom":"cacao"}],"from_address":"tmaya1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp","to_address":"tmaya10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"}}],"sequence":"5"})";
 
         parsed_json_t json;
         parser_error_t err;
@@ -135,7 +135,7 @@ namespace {
 
     TEST(TxValidationTest, Spaces_AtTheEnd) {
         auto transaction =
-            R"({"account_number":"588","chain_id":"thorchain","fee":{"amount":[],"gas":"2000000"},"memo":"TestMemo","msgs":[{"type":"thorchain/MsgSend","value":{"amount":[{"amount":"150000000","denom":"rune"}],"from_address":"tthor1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp","to_address":"tthor10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"}}],"sequence":"5"  })";
+            R"({"account_number":"588","chain_id":"mayachain","fee":{"amount":[],"gas":"2000000"},"memo":"TestMemo","msgs":[{"type":"mayachain/MsgSend","value":{"amount":[{"amount":"150000000","denom":"cacao"}],"from_address":"tmaya1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp","to_address":"tmaya10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"}}],"sequence":"5"  })";
 
         parsed_json_t json;
         parser_error_t err;
@@ -149,7 +149,7 @@ namespace {
 
     TEST(TxValidationTest, Spaces_Lots) {
         auto transaction =
-            R"({"account_number": "588","chain_id":"thorchain"  ,"fee":{"amount": [ ],"gas":"2000000"},"memo":"TestMemo","msgs":[{"type":"thorchain/MsgSend","value":{"amount":[{"amount":"150000000","denom":"rune"}],"from_address":"tthor1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp","to_address":"tthor10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"}}],"sequence":"5"})";
+            R"({"account_number": "588","chain_id":"mayachain"  ,"fee":{"amount": [ ],"gas":"2000000"},"memo":"TestMemo","msgs":[{"type":"mayachain/MsgSend","value":{"amount":[{"amount":"150000000","denom":"cacao"}],"from_address":"tmaya1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp","to_address":"tmaya10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"}}],"sequence":"5"})";
 
         parsed_json_t json;
         parser_error_t err;
@@ -163,7 +163,7 @@ namespace {
 
     TEST(TxValidationTest, AllowSpacesInString) {
         auto transaction =
-            R"({"account_number":"588","chain_id":"  thorchain  ","fee":{"amount":[],"gas":"2000000"},"memo":"  TestMemo  ","msgs":[{"type":"thorchain/MsgSend","value":{"amount":[{"amount":"150000000","denom":"rune"}],"from_address":"tthor1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp","to_address":"tthor10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"}}],"sequence":"5"})";
+            R"({"account_number":"588","chain_id":"  mayachain  ","fee":{"amount":[],"gas":"2000000"},"memo":"  TestMemo  ","msgs":[{"type":"mayachain/MsgSend","value":{"amount":[{"amount":"150000000","denom":"cacao"}],"from_address":"tmaya1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp","to_address":"tmaya10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"}}],"sequence":"5"})";
 
         parsed_json_t json;
         parser_error_t err;
@@ -177,7 +177,7 @@ namespace {
 
     TEST(TxValidationTest, SortedDictionary) {
         auto transaction =
-            R"({"account_number":"588","chain_id":"thorchain","fee":{"amount":[],"gas":"2000000"},"memo":"TestMemo","msgs":[{"type":"thorchain/MsgSend","value":{"amount":[{"amount":"150000000","denom":"rune"}],"from_address":"tthor1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp","to_address":"tthor10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"}}],"sequence":"5"})";
+            R"({"account_number":"588","chain_id":"mayachain","fee":{"amount":[],"gas":"2000000"},"memo":"TestMemo","msgs":[{"type":"mayachain/MsgSend","value":{"amount":[{"amount":"150000000","denom":"cacao"}],"from_address":"tmaya1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp","to_address":"tmaya10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"}}],"sequence":"5"})";
 
         parsed_json_t json;
         parser_error_t err;
@@ -191,7 +191,7 @@ namespace {
 
     TEST(TxValidationTest, NotSortedDictionary_FirstElement) {
         auto transaction =
-            R"({"chain_id":"thorchain","account_number":"588","fee":{"amount":[],"gas":"2000000"},"memo":"TestMemo","msgs":[{"type":"thorchain/MsgSend","value":{"amount":[{"amount":"150000000","denom":"rune"}],"from_address":"tthor1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp","to_address":"tthor10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"}}],"sequence":"5"})";
+            R"({"chain_id":"mayachain","account_number":"588","fee":{"amount":[],"gas":"2000000"},"memo":"TestMemo","msgs":[{"type":"mayachain/MsgSend","value":{"amount":[{"amount":"150000000","denom":"cacao"}],"from_address":"tmaya1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp","to_address":"tmaya10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"}}],"sequence":"5"})";
 
         parsed_json_t json;
         parser_error_t err;
@@ -205,7 +205,7 @@ namespace {
 
     TEST(TxValidationTest, NotSortedDictionary_MiddleElement) {
         auto transaction =
-            R"({"account_number":"588","chain_id":"thorchain","fee":{"gas":"2000000","amount":[]},"memo":"TestMemo","msgs":[{"type":"thorchain/MsgSend","value":{"amount":[{"amount":"150000000","denom":"rune"}],"from_address":"tthor1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp","to_address":"tthor10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"}}],"sequence":"5"})";
+            R"({"account_number":"588","chain_id":"mayachain","fee":{"gas":"2000000","amount":[]},"memo":"TestMemo","msgs":[{"type":"mayachain/MsgSend","value":{"amount":[{"amount":"150000000","denom":"cacao"}],"from_address":"tmaya1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp","to_address":"tmaya10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"}}],"sequence":"5"})";
 
         parsed_json_t json;
         parser_error_t err;
@@ -219,7 +219,7 @@ namespace {
 
     TEST(TxValidationTest, NotSortedDictionary_LastElement) {
         auto transaction =
-            R"({"account_number":"588","chain_id":"thorchain","fee":{"amount":[],"gas":"2000000"},"memo":"TestMemo","sequence":"5","msgs":[{"type":"thorchain/MsgSend","value":{"amount":[{"amount":"150000000","denom":"rune"}],"from_address":"tthor1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp","to_address":"tthor10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"}}]})";
+            R"({"account_number":"588","chain_id":"mayachain","fee":{"amount":[],"gas":"2000000"},"memo":"TestMemo","sequence":"5","msgs":[{"type":"mayachain/MsgSend","value":{"amount":[{"amount":"150000000","denom":"cacao"}],"from_address":"tmaya1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp","to_address":"tmaya10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"}}]})";
 
         parsed_json_t json;
         parser_error_t err;

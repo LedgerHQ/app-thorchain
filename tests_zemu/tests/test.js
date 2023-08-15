@@ -19,7 +19,7 @@ jest.setTimeout(30000)
 
 const example_tx_str_MsgSend = {
     "account_number": "588",
-    "chain_id": "thorchain",
+    "chain_id": "mayachain",
     "fee": {
         "amount": [],
         "gas": "2000000"
@@ -27,16 +27,16 @@ const example_tx_str_MsgSend = {
     "memo": "TestMemo",
     "msgs": [
         {
-            "type": "thorchain/MsgSend",
+            "type": "mayachain/MsgSend",
             "value": {
                 "amount": [
                     {
                         "amount": "150000000",
-                        "denom": "rune"
+                        "denom": "cacao"
                     }
                 ],
-                "from_address": "tthor1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp",
-                "to_address": "tthor10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"
+                "from_address": "tmaya1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp",
+                "to_address": "tmaya10xgrknu44d83qr4s4uw56cqxg0hsev5e68lc9z"
             }
         }
     ],
@@ -45,7 +45,7 @@ const example_tx_str_MsgSend = {
 
 const example_tx_str_MsgDeposit = {
     "account_number": "588",
-    "chain_id": "thorchain",
+    "chain_id": "mayachain",
     "fee": {
         "amount": [],
         "gas": "10000000"
@@ -53,16 +53,16 @@ const example_tx_str_MsgDeposit = {
     "memo": "",
     "msgs": [
         {
-            "type": "thorchain/MsgDeposit",
+            "type": "mayachain/MsgDeposit",
             "value": {
                 "coins": [
                     {
                         "amount": "330000000",
-                        "asset": "THOR.RUNE"
+                        "asset": "MAYA.CACAO"
                     }
                 ],
                 "memo": "SWAP:BNB.BNB:tbnb1qk2m905ypazwfau9cn0qnr4c4yxz63v9u9md20:",
-                "signer": "tthor1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp"
+                "signer": "tmaya1c648xgpter9xffhmcqvs7lzd7hxh0prgv5t5gp"
             }
         }
     ],
@@ -140,7 +140,7 @@ describe('Basic checks', function () {
             await sim.start(sim_options);
             const app = new CosmosApp(sim.getTransport());
             const path = [44, 931, 0, 0, 0];
-            const resp = await app.getAddressAndPubKey(path, "thor");
+            const resp = await app.getAddressAndPubKey(path, "maya");
 
             console.log(resp);
 
@@ -152,7 +152,7 @@ describe('Basic checks', function () {
             
             // Independently derived from Ian Colman BIP39
             // https://github.com/iancoleman/bip39/pull/492
-            expect(resp.bech32_address).toEqual("thor1mwyrp6lj85swy5e5g4hjlaacm33g6rw3p4qmq4");
+            expect(resp.bech32_address).toEqual("maya1mwyrp6lj85swy5e5g4hjlaacm33g6rw3p4qmq4");
             expect(resp.compressed_pk.length).toEqual(33);
         } finally {
             await sim.close();
@@ -170,7 +170,7 @@ describe('Basic checks', function () {
             let tx = JSON.stringify(example_tx_str_MsgSend);
 
             // get address / publickey
-            const respPk = await app.getAddressAndPubKey(path, "thor");
+            const respPk = await app.getAddressAndPubKey(path, "maya");
             expect(respPk.return_code).toEqual(0x9000);
             expect(respPk.error_message).toEqual("No errors");
             console.log(respPk)
@@ -220,7 +220,7 @@ describe('Basic checks', function () {
             let tx = JSON.stringify(example_tx_str_MsgDeposit);
 
             // get address / publickey
-            const respPk = await app.getAddressAndPubKey(path, "thor");
+            const respPk = await app.getAddressAndPubKey(path, "maya");
             expect(respPk.return_code).toEqual(0x9000);
             expect(respPk.error_message).toEqual("No errors");
             console.log(respPk)
@@ -271,7 +271,7 @@ describe('Basic checks', function () {
             let tx = JSON.stringify(example_tx_str_MsgSend);
 
             // get address / publickey
-            const respPk = await app.getAddressAndPubKey(path, "thor");
+            const respPk = await app.getAddressAndPubKey(path, "maya");
             expect(respPk.return_code).toEqual(0x9000);
             expect(respPk.error_message).toEqual("No errors");
             console.log(respPk)

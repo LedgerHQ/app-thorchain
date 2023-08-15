@@ -1,10 +1,10 @@
-# Ledger THORChain app
+# Ledger MAYAChain app
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![CodeFactor](https://www.codefactor.io/repository/github/thorchain/ledger-thorchain/badge)](https://www.codefactor.io/repository/github/thorchain/ledger-thorchain)
+[![CodeFactor](https://www.codefactor.io/repository/github/mayachain/ledger-mayachain/badge)](https://www.codefactor.io/repository/github/mayachain/ledger-mayachain)
 
-This project contains the THORChain app for Ledger Nano S and X.
+This project contains the MAYAChain app for Ledger Nano S and X.
 
-- Ledger Nano S/X THORChain app
+- Ledger Nano S/X MAYAChain app
 - Specs / Documentation
 - C++ unit tests
 - Zemu tests
@@ -53,7 +53,7 @@ User instructions in [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
     ```
     [https://github.com/LedgerHQ/ledger-app-builder#compile-your-app-in-the-container](https://github.com/LedgerHQ/ledger-app-builder#compile-your-app-in-the-container)
     ```bash
-    cd /path/to/app-thorchain
+    cd /path/to/app-mayachain
     sudo docker run --rm -ti -v "$(realpath .):/app" ledger-app-builder:latest
     /app# make    <-- nanoS
     /app# make clean
@@ -84,9 +84,9 @@ If you see conan is not found, check that you installed the package in the same 
 
     If you installed the what is described above, just run:
     ```bash
-    cd ledger-thorchain
+    cd ledger-mayachain
     export PATH=/path/to/gcc-arm-none-eabi/bin:$PATH
-    export BOLOS_SDK=/path/to/ledger-thorchain/deps/nanos-secure-sdk
+    export BOLOS_SDK=/path/to/ledger-mayachain/deps/nanos-secure-sdk
     make
     make load
     ```
