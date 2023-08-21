@@ -53,7 +53,7 @@ parser_error_t parser_getNumItems(const parser_context_t *ctx, uint8_t *num_item
 }
 
 // This should always query for the direct JSMN_STRING type
-// and MAYAChain always sends in long format, eg "100000000" for "1.0 CACAO"
+// and MAYAChain always sends in long format, eg "10000000000" for "1.0 CACAO"
 __Z_INLINE bool_t parser_isAmount(char *key) {
     if (strcmp(key, "msgs/value/coins") == 0) return bool_true;
 

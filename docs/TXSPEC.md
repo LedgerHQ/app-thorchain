@@ -20,7 +20,7 @@ Transactions passed to the Ledger device will be in the following format. The Le
 ```
 
 `msgs` is a list of messages, which are arbitrary JSON structures. Ledger app currently supports `MsgDeposit` & `MsgSend` (examples below). 
-**Note:** All amount & gas values must be in base integer unit 1e8. E.g. "1.0" CACAO is invalid. The amount must be "100000000".
+**Note:** All amount & gas values must be in base integer unit 1e10. E.g. "1.0" CACAO is invalid. The amount must be "10000000000".
 
 #### Examples
 
