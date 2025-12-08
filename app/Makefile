@@ -43,7 +43,6 @@ APP_SOURCE_PATH += $(CURDIR)/../deps/jsmn/src
 
 # Application icons following guidelines:
 # https://developers.ledger.com/docs/embedded-app/design-requirements/#device-icon
-ICON_NANOS = nanos_icon.gif
 ICON_NANOX = nanox_icon.gif
 ICON_NANOSP = nanox_icon.gif
 ICON_STAX = stax_icon.gif
@@ -86,11 +85,6 @@ VARIANT_PARAM=COIN
 VARIANT_VALUES=$(COIN)
 
 INCLUDES_PATH += $(CURDIR)/src/common
-INCLUDES_PATH += $(BOLOS_SDK)/lib_cxng/src
-
-
-DEFINES += HAVE_HASH HAVE_BLAKE2 HAVE_SHA256 HAVE_SHA512
-
 
 ########################################
 # Application communication interfaces #
@@ -139,9 +133,7 @@ DEFINES += PRODUCTION_BUILD=$(PRODUCTION_BUILD)
 # Configure devices and permissions
 include $(CURDIR)/../deps/ledger-zxlib/makefiles/Makefile.devices
 
-ifeq ($(TARGET_NAME),TARGET_NANOS)
-	APP_STACK_MIN_SIZE := 1600
-else ifeq ($(TARGET_NAME),TARGET_NANOX)
+ifeq ($(TARGET_NAME),TARGET_NANOX)
 $(info SETTING STACK SIZE FOR NANOX)
 # the previous value (5000) was too high and caused the app to crash, i reduced it until it worked
 	APP_STACK_MIN_SIZE := 1730
