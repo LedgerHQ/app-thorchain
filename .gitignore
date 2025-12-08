@@ -82,6 +82,9 @@ cmake-build-fuzz/
 \deps/*
 !\deps/nanos-secure-sdk
 !\deps/nanox-secure-sdk
+!\deps/stax-secure-sdk
+!\deps/apex-p-secure-sdk
+!\deps/flex-secure-sdk
 !\deps/ledger-zxlib
 !\deps/tinycbor
 !\deps/tinycbor-ledger
