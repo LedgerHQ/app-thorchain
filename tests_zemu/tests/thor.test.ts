@@ -66,7 +66,9 @@ async function signAndVerifyTransaction(m: IDeviceModel, test_name: String, tran
 
     // Now verify the signature
     const hash = crypto.createHash('sha256');
-    const msgHash = Uint8Array.from(hash.update(tx).digest());
+    // Convert tx buffer to string
+    const tx_str = tx.toString('utf-8');
+    const msgHash = Uint8Array.from(hash.update(tx_str).digest());
 
     const signatureDER = resp.signature;
     const signature = secp256k1.signatureImport(Uint8Array.from(signatureDER));

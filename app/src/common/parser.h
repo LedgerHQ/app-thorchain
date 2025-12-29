@@ -24,10 +24,6 @@ extern "C" {
 #include "coin.h"
 
 #define OUTPUT_HANDLER_SIZE 600
-#if defined(TARGET_NANOS)
-#undef OUTPUT_HANDLER_SIZE
-#define OUTPUT_HANDLER_SIZE 450
-#endif
 
 #define MAX_CONTENT_SIZE 550
 #define MAX_TITLE_SIZE 40

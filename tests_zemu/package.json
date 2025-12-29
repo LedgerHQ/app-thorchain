@@ -19,30 +19,30 @@
   },
   "dependencies": {
     "@blooo/ledger-thorchain-js": "^1.0.1",
-    "@zondax/zemu": "^0.50.2"
+    "@zondax/zemu": "^0.64.1"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.11",
+    "@types/jest": "^29.5.14",
     "@types/ledgerhq__hw-transport": "^4.21.8",
-    "@typescript-eslint/eslint-plugin": "^6.16.0",
-    "@typescript-eslint/parser": "^6.16.0",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
     "bech32": "^2.0.0",
-    "blakejs": "^1.1.1",
+    "blakejs": "^1.2.1",
     "crypto-js": "4.2.0",
-    "eslint": "^8.56.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-jest": "^27.6.0",
-    "eslint-plugin-prettier": "^5.1.2",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.1.2",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jest": "^27.9.0",
+    "eslint-plugin-prettier": "^5.5.4",
     "jest": "29.7.0",
-    "jest-serial-runner": "^1.1.0",
+    "jest-serial-runner": "^1.2.2",
     "js-sha3": "0.9.3",
-    "jssha": "^3.2.0",
+    "jssha": "^3.3.1",
     "keccak256": "^1.0.6",
-    "prettier": "^3.1.1",
-    "secp256k1": "^5.0.0",
-    "ts-jest": "^29.1.1",
+    "prettier": "^3.7.4",
+    "secp256k1": "^5.0.1",
+    "ts-jest": "^29.4.6",
     "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.9.3"
   }
 }
