@@ -44,7 +44,7 @@ APP_SOURCE_PATH += $(CURDIR)/../deps/jsmn/src
 # Application icons following guidelines:
 # https://developers.ledger.com/docs/embedded-app/design-requirements/#device-icon
 ICON_NANOX = nanox_icon.gif
-ICON_NANOSP = nanox_icon.gif
+ICON_NANOSP = nanoxsp_icon.gif
 ICON_STAX = stax_icon.gif
 ICON_FLEX = flex_icon.gif
 ICON_APEX_P = apex_p_icon.png
